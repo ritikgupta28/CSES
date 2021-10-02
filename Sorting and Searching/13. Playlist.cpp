@@ -13,7 +13,7 @@ int main() {
     cin>>n;
     ll a[n];
     ll ans = 0, prev = 0;
-	unordered_map<ll, ll> ourmap;
+	map<ll, ll> ourmap;
 	for(ll i=0; i<n; i++) {
 		cin>>a[i];
 		if(ourmap.count(a[i]) > 0) {

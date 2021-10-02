@@ -14,5 +14,33 @@ int main() {
     while(t--) {
     	ll x,y;
     	cin>>x>>y;
+    	
+    	ll index = max(x, y);
+    	
+    	ll ans;
+    	if(index == y) {
+    		if(index%2 == 1) {
+    			ans = index*index;
+    			ans -= x - 1;
+			}
+			else {
+				ans = (index-1)*(index-1);
+				ans += 1;
+				ans += x - 1;
+			}
+		}
+		else {
+			if(index%2 == 0) {
+    			ans = index*index;
+    			ans -= y - 1;
+			}
+			else {
+				ans = (index-1)*(index-1);
+				ans += 1;
+				ans += y - 1;
+			}
+		}
+		
+		cout<<ans<<"\n";
 	}
 }

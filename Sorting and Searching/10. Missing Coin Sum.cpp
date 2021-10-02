@@ -15,4 +15,26 @@ int main() {
     for(ll i=0; i<n; i++) {
     	cin>>a[i];
 	}
+	
+	sort(a, a+n);
+	
+	ll curr = 1, sum = 0;
+	for(ll i=0; i<n; i++) {
+		if(sum < curr) {
+			if(a[i] <= curr) {
+				sum += a[i];
+				curr = sum;
+			}
+			else {
+				cout<<curr;
+				return 0;
+			}
+		}
+		else {
+			sum += a[i];
+			curr = sum;
+		}
+		curr++;
+	}
+	cout<<sum+1;
 }
